@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<h1>管理员界面</h1>
+
+
+
+<!--<h1 th:text="| 当前操作界面 #{app.title} |">页面标题</h1>-->
+<!--<h3 th:text="#{app.test}">测试</h3>-->
+<div th:object="${guest}">
+    <h1 th:text="| 当前登录用户 *{nick} |">当前登录用户</h1>
+
+    <table cellspacing="0" border="1">
+        <tr>
+
+            <td>账号编号</td>
+            <td>账号密码</td>
+            <td>账号昵称</td>
+            <td>账号角色</td>
+            <td>账号登录时间</td>
+            <td>编辑</td>
+
+        </tr>
+
+        <tr th:each="item:${guestInfos}">
+            <td th:text="${item.uid}">账号编号</td>
+            <td th:text="${item.pwd}">账号密码</td>
+            <td th:text="${item.nick}">账号昵称</td>
+            <td th:text="${item.rid}"></td>
+            <td th:text="${item.loginTime}">账号登录时间</td>
+            <td><a th:href="@{mod(id=${item.uid})}">编辑1</a></td>
+            <td>
+                <a th:href="|mod?id=${item.uid}|">编辑2</a>
+            </td>
+        </tr>
+    </table>
+
+    <form  th:action="|abc?id=${guest.uid}|">
+        <!--    <form action="" th:action="@{mod(id=${guest.uid})}">-->
+        <input id="uid" value="default" th:value="${guest.nick}">
+        <input type="submit" value="ok" th:value="'Test'">
+
+    </form>
+
+
+</div>
+
+</body>
+</html>

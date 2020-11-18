@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--用于延时加载-->
+
+
+<mapper namespace="com.zxq.dao.AccountDao1">
+
+<!--    开启二级缓存的支持-->
+    <cache/>
+
+<!--    type：返回结果可以用哪个pojo表示，POJO全限定名-->
+
+<!--    定义封装account和user的resultMap-->
+    <resultMap id="Account" type="Account">
+        <!--用id表示主键，result表示其他字段
+         property: pojo中的属性名   column：表中的字段名   -->
+        <id property="id" column="id"></id>
+        <result property="uid" column="uid"></result>
+        <result property="money" column="money"></result>
+
+<!--        一对多的关系映射，配置封装user的内容-->
+<!--         association标签表示Users中的实体类属性，1:1  ,添加javaType属性：表示POJO的全限定名-->
+<!--        select属性指定的内容，查询用户的唯一标识
+            column属性指定的内容，用户根据id查询时。所需要的参数的值
+-->
+        <association property="user"    javaType="com.zxq.domain.User" column="uid" select="com.zxq.dao.IUserDao.findById">
+
+
+        </association>
+    </resultMap>
+
+
+    <!--    查询所有-->
+    <select id="findAll" resultMap="Account" useCache="true">
+        select *
+         from account
+    </select>
+
+
+
+
+
+    <select id="findAllAccount" resultType="com.zxq.domain.AccountUser">
+        select  a.*,u.username,u.address
+        from user u,account a
+        where u.id=a.uid;
+    </select>
+
+
+</mapper>

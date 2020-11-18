@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--仅用于多对多-->
+
+<mapper namespace="com.zxq.mapper.UserMapper1">
+
+    <select id="findUserInIds" resultType="com.zxq.domain.User" parameterType="QueryVo">
+        select *from user
+        <where>
+            <if test="ids!=null and ids.size()>0">
+                <foreach collection="ids" open="and id in(" close=")" item="id" separator=",">
+                    #{id}
+                </foreach>
+
+            </if>
+        </where>
+
+    </select>
+
+
+    <resultMap id="userAccountMap" type="User1">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="address" column="address"></result>
+        <result column="sex" property="sex"/>
+        <result column="birthday" property="birthday"/>
+        
+<!--        配置角色集合的映射-->
+        <collection property="roles" ofType="Role">
+            <id property="roleId" column="rid"></id>
+            <result property="roleName" column="role_name"></result>
+            <result property="roleDesc" column="role_desc"></result>
+
+
+        </collection>
+
+    </resultMap>
+
+    <!--    配置查询所有-->
+    <select id="findAll" resultMap="userAccountMap">
+      SELECT u.*,r.id rid,r.role_name,r.role_desc
+      FROM `user` u
+      LEFT OUTER JOIN user_role ur
+      on u.id=ur.uid
+      LEFT OUTER  JOIN role r
+      on r.id=ur.rid
+    </select>
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

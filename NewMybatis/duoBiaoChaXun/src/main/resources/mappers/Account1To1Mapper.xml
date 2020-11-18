@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zxq.mapper.Account1To1Mapper">
+
+    <resultMap id="map" type="com.zxq.domain.Account1To1">
+        <id column="id" property="id"></id>
+        <result property="money" column="money"></result>
+        <result property="uid" column="uid"></result>
+
+        <association property="user1To1" javaType="com.zxq.domain.User1To1">
+            <id column="id" property="id"></id>
+            <result property="address" column="address"></result>
+            <result property="birthday" column="birthday"/>
+            <result property="username" column="username"/>
+            <result property="password" column="password"/>
+            <result property="sex" column="sex"/>
+            <result property="phoneNumber" column="phoneNumber"/>
+            <result property="email" column="email"/>
+            <result property="userState" column="userState"/>
+        </association>
+
+    </resultMap>
+
+    <select id="getAllAccount" resultMap="map">
+            select a.id,a.money,a.uid,u.*
+            from account a
+            left join user u
+            on u.id= a.uid
+   </select>
+</mapper>

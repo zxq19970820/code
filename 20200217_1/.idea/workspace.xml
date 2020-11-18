@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1ae8af71-df0e-4c68-9d1f-4eddf7e0330b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="20200217_1" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XusMMMGZGV3EtkXzJzFav4tuGz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\idea_data\20200217_1\practice\src\lol" />
+      <recent name="D:\idea_data\20200217_1\practice\src\NET" />
+      <recent name="D:\idea_data\20200217_1\homework\src\homework___2__25\h1" />
+      <recent name="D:\idea_data\20200217_1\homework\src\homework___2__25\1" />
+      <recent name="D:\idea_data\20200217_1\homework\src\homework___2__25\hw2" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="test___" />
+      <recent name="dxc.runnable" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\idea_data\20200217_1\practice" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.test">
+    <configuration name="ClassTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FanShe.ClassTest" />
+      <module name="classTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ZhuJie.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Constructordd" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FanShe.Constructordd" />
+      <module name="classTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FanShe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="constructor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FanShe.constructor.constructor" />
+      <module name="classTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FanShe.constructor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="filestest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FanShe.filestest" />
+      <module name="classTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FanShe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="duotai.test" />
+      <module name="classTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="duotai.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.test" />
+        <item itemvalue="Application.constructor" />
+        <item itemvalue="Application.Constructordd" />
+        <item itemvalue="Application.filestest" />
+        <item itemvalue="Application.ClassTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ae8af71-df0e-4c68-9d1f-4eddf7e0330b" name="Default Changelist" comment="" />
+      <created>1581907264660</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581907264660</updated>
+      <workItem from="1581907267079" duration="519000" />
+      <workItem from="1581907792613" duration="3273000" />
+      <workItem from="1581918558484" duration="10999000" />
+      <workItem from="1581984942147" duration="9024000" />
+      <workItem from="1582001234637" duration="329000" />
+      <workItem from="1582005497035" duration="22092000" />
+      <workItem from="1582038585827" duration="1578000" />
+      <workItem from="1582071388044" duration="3787000" />
+      <workItem from="1582077929550" duration="4871000" />
+      <workItem from="1582092084722" duration="11990000" />
+      <workItem from="1582110401021" duration="4638000" />
+      <workItem from="1582115116258" duration="2715000" />
+      <workItem from="1582122678677" duration="3620000" />
+      <workItem from="1582157782082" duration="2896000" />
+      <workItem from="1582163443289" duration="53000" />
+      <workItem from="1582165122441" duration="4523000" />
+      <workItem from="1582177651118" duration="2070000" />
+      <workItem from="1582244312791" duration="886000" />
+      <workItem from="1582245266681" duration="8541000" />
+      <workItem from="1582264954975" duration="16466000" />
+      <workItem from="1582358142649" duration="5263000" />
+      <workItem from="1582453362406" duration="5267000" />
+      <workItem from="1582503810970" duration="7782000" />
+      <workItem from="1582512648181" duration="5136000" />
+      <workItem from="1582519407872" duration="566000" />
+      <workItem from="1582523540438" duration="13380000" />
+      <workItem from="1582542980039" duration="1464000" />
+      <workItem from="1582544526224" duration="1983000" />
+      <workItem from="1582549658738" duration="1187000" />
+      <workItem from="1582557337295" duration="159000" />
+      <workItem from="1582589155252" duration="4079000" />
+      <workItem from="1582595936437" duration="1617000" />
+      <workItem from="1582597616850" duration="24000" />
+      <workItem from="1582598969239" duration="22127000" />
+      <workItem from="1582630068562" duration="4605000" />
+      <workItem from="1582637156179" duration="2866000" />
+      <workItem from="1582640057344" duration="879000" />
+      <workItem from="1582641166831" duration="3314000" />
+      <workItem from="1582676204439" duration="2729000" />
+      <workItem from="1582679246524" duration="387000" />
+      <workItem from="1582680898381" duration="773000" />
+      <workItem from="1582681709614" duration="909000" />
+      <workItem from="1582682896194" duration="29591000" />
+      <workItem from="1582763565902" duration="27985000" />
+      <workItem from="1582811560321" duration="518000" />
+      <workItem from="1582813640036" duration="3467000" />
+      <workItem from="1582849286319" duration="295000" />
+      <workItem from="1582850440019" duration="14978000" />
+      <workItem from="1582870000071" duration="5274000" />
+      <workItem from="1582877009938" duration="2863000" />
+      <workItem from="1582887901083" duration="11744000" />
+      <workItem from="1582941738054" duration="2895000" />
+      <workItem from="1582945656997" duration="2206000" />
+      <workItem from="1582969410598" duration="12158000" />
+      <workItem from="1583038952884" duration="1191000" />
+      <workItem from="1583046163402" duration="5380000" />
+      <workItem from="1583066970576" duration="9588000" />
+      <workItem from="1583109063348" duration="12042000" />
+      <workItem from="1583128721598" duration="568000" />
+      <workItem from="1583150893644" duration="7000" />
+      <workItem from="1583155969396" duration="3483000" />
+      <workItem from="1583203732797" duration="413000" />
+      <workItem from="1583402385036" duration="21000" />
+      <workItem from="1583409221035" duration="38000" />
+      <workItem from="1583410572264" duration="30000" />
+      <workItem from="1583655272024" duration="6187000" />
+      <workItem from="1583713066882" duration="101000" />
+      <workItem from="1583853795575" duration="32000" />
+      <workItem from="1584607627774" duration="57000" />
+      <workItem from="1599722223996" duration="40000" />
+      <workItem from="1599730056098" duration="35000" />
+      <workItem from="1604885844122" duration="87000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="529" y="258" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1599722234896">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="529" y="258" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.738@0.0.1366.738" timestamp="1599722234896" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/classTest/src/YICHANG/OTHER.java</url>
+          <line>5</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/classTest/src/YICHANG/test.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

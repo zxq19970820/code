@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangyicourse.mappers.InstitutionMapper">
+  <resultMap id="BaseResultMap" type="com.wangyicourse.entity.Institution">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="inname" jdbcType="VARCHAR" property="inname" />
+    <result column="inpassword" jdbcType="VARCHAR" property="inpassword" />
+    <result column="describee" jdbcType="VARCHAR" property="describee" />
+    <result column="iconsrc" jdbcType="VARCHAR" property="iconsrc" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, inname, inpassword, describee, iconsrc, state
+  </sql>
+  <select id="selectByExample" parameterType="com.wangyicourse.entity.InstitutionExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from institution
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from institution
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from institution
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wangyicourse.entity.InstitutionExample">
+    delete from institution
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wangyicourse.entity.Institution">
+    insert into institution (id, inname, inpassword, 
+      describee, iconsrc, state
+      )
+    values (#{id,jdbcType=INTEGER}, #{inname,jdbcType=VARCHAR}, #{inpassword,jdbcType=VARCHAR}, 
+      #{describee,jdbcType=VARCHAR}, #{iconsrc,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wangyicourse.entity.Institution">
+    insert into institution
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="inname != null">
+        inname,
+      </if>
+      <if test="inpassword != null">
+        inpassword,
+      </if>
+      <if test="describee != null">
+        describee,
+      </if>
+      <if test="iconsrc != null">
+        iconsrc,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="inname != null">
+        #{inname,jdbcType=VARCHAR},
+      </if>
+      <if test="inpassword != null">
+        #{inpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="describee != null">
+        #{describee,jdbcType=VARCHAR},
+      </if>
+      <if test="iconsrc != null">
+        #{iconsrc,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wangyicourse.entity.InstitutionExample" resultType="java.lang.Long">
+    select count(*) from institution
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update institution
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.inname != null">
+        inname = #{record.inname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.inpassword != null">
+        inpassword = #{record.inpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="record.describee != null">
+        describee = #{record.describee,jdbcType=VARCHAR},
+      </if>
+      <if test="record.iconsrc != null">
+        iconsrc = #{record.iconsrc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null">
+        state = #{record.state,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update institution
+    set id = #{record.id,jdbcType=INTEGER},
+      inname = #{record.inname,jdbcType=VARCHAR},
+      inpassword = #{record.inpassword,jdbcType=VARCHAR},
+      describee = #{record.describee,jdbcType=VARCHAR},
+      iconsrc = #{record.iconsrc,jdbcType=VARCHAR},
+      state = #{record.state,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wangyicourse.entity.Institution">
+    update institution
+    <set>
+      <if test="inname != null">
+        inname = #{inname,jdbcType=VARCHAR},
+      </if>
+      <if test="inpassword != null">
+        inpassword = #{inpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="describee != null">
+        describee = #{describee,jdbcType=VARCHAR},
+      </if>
+      <if test="iconsrc != null">
+        iconsrc = #{iconsrc,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wangyicourse.entity.Institution">
+    update institution
+    set inname = #{inname,jdbcType=VARCHAR},
+      inpassword = #{inpassword,jdbcType=VARCHAR},
+      describee = #{describee,jdbcType=VARCHAR},
+      iconsrc = #{iconsrc,jdbcType=VARCHAR},
+      state = #{state,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

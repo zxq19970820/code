@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3c15fabd-5328-4c53-8d04-96ab62b345f8" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1awYQ0hfG8NALTWXdsCD84bFzLn" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.elasticsearch" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.elasticsearch" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.elasticsearch" />
+      <recent name="com.elasticsearch.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\idea_data\ElasticSearchProject\src\main\java\com\elasticsearch" />
+      <recent name="C:\Users\Administrator\Desktop\mybatis4.1\ElasticSearchProject\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.SpringDataESTest.getDocumentByContent">
+    <configuration name="JsoupDemo1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.elasticsearch.JsoupDemo1" />
+      <module name="ElasticSearchProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.elasticsearch.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringDataESTest.getDocumentByContent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ElasticSearchProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.elasticsearch.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.elasticsearch" />
+      <option name="MAIN_CLASS_NAME" value="com.elasticsearch.SpringDataESTest" />
+      <option name="METHOD_NAME" value="getDocumentByContent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="phoneTest.createDocument1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ElasticSearchProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.elasticsearch.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.elasticsearch" />
+      <option name="MAIN_CLASS_NAME" value="com.elasticsearch.phoneTest" />
+      <option name="METHOD_NAME" value="createDocument1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="phoneTest.getDocumentById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ElasticSearchProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.elasticsearch.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.elasticsearch" />
+      <option name="MAIN_CLASS_NAME" value="com.elasticsearch.phoneTest" />
+      <option name="METHOD_NAME" value="getDocumentById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="phoneTest.getDocumentsByTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ElasticSearchProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.elasticsearch.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.elasticsearch" />
+      <option name="MAIN_CLASS_NAME" value="com.elasticsearch.phoneTest" />
+      <option name="METHOD_NAME" value="getDocumentsByTitle" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SpringDataESTest.getDocumentByContent" />
+        <item itemvalue="Application.JsoupDemo1" />
+        <item itemvalue="JUnit.phoneTest.getDocumentById" />
+        <item itemvalue="JUnit.phoneTest.createDocument1" />
+        <item itemvalue="JUnit.phoneTest.getDocumentsByTitle" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3c15fabd-5328-4c53-8d04-96ab62b345f8" name="Default Changelist" comment="" />
+      <created>1587648103956</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587648103956</updated>
+      <workItem from="1587648108132" duration="2697000" />
+      <workItem from="1588004089231" duration="2128000" />
+      <workItem from="1588039501571" duration="15676000" />
+      <workItem from="1588069254157" duration="13383000" />
+      <workItem from="1588085097007" duration="54000" />
+      <workItem from="1588086683998" duration="354000" />
+      <workItem from="1588087580366" duration="147000" />
+      <workItem from="1588118969519" duration="82000" />
+      <workItem from="1588205578277" duration="4542000" />
+      <workItem from="1588210462230" duration="6534000" />
+      <workItem from="1588228912742" duration="251000" />
+      <workItem from="1588598590964" duration="3036000" />
+      <workItem from="1588604649158" duration="1289000" />
+      <workItem from="1588649787321" duration="13422000" />
+      <workItem from="1588671909427" duration="7161000" />
+      <workItem from="1588680953103" duration="668000" />
+      <workItem from="1588723928713" duration="2504000" />
+      <workItem from="1588734067769" duration="210000" />
+      <workItem from="1588763646485" duration="308000" />
+      <workItem from="1589349839319" duration="667000" />
+      <workItem from="1589350776977" duration="321000" />
+      <workItem from="1589353181544" duration="1490000" />
+      <workItem from="1589723773396" duration="83000" />
+      <workItem from="1590069485434" duration="2706000" />
+      <workItem from="1590136208001" duration="70000" />
+      <workItem from="1590302628411" duration="157000" />
+      <workItem from="1590310198640" duration="1036000" />
+      <workItem from="1590311471243" duration="132000" />
+      <workItem from="1590484887698" duration="165000" />
+      <workItem from="1590551424944" duration="859000" />
+      <workItem from="1590552328041" duration="76000" />
+      <workItem from="1590560924147" duration="122000" />
+      <workItem from="1590994218497" duration="85000" />
+      <workItem from="1591010238995" duration="830000" />
+      <workItem from="1605350369054" duration="715000" />
+      <workItem from="1605439721188" duration="87000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="614" y="307" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1605350463828">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="614" y="307" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.834@0.0.1536.834" timestamp="1605350463828" />
+    <state width="1493" height="398" key="GridCell.Tab.0.bottom" timestamp="1605439809327">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="398" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1605439809327" />
+    <state width="1493" height="398" key="GridCell.Tab.0.center" timestamp="1605439809327">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="398" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1605439809327" />
+    <state width="1493" height="398" key="GridCell.Tab.0.left" timestamp="1605439809327">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="398" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1605439809327" />
+    <state width="1493" height="398" key="GridCell.Tab.0.right" timestamp="1605439809327">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="398" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1605439809327" />
+    <state x="270" y="60" key="SettingsEditor" timestamp="1605439747376">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="270" y="60" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1605439747376" />
+  </component>
+</project>

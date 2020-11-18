@@ -1,0 +1,11 @@
+#服务器的端口号
+server:
+  port: 8081
+
+#配置dubbo
+dubbo:
+  application:
+    name: "hello-consumer"
+  registry:
+#    address: "zookeeper://192.168.186.128:2181"
+    address: zookeeper://127.0.0.1:2181

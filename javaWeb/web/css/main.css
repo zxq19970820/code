@@ -1,0 +1,38 @@
+#wengbeng {
+    /*display: flex;*/
+    /*justify-content: center;*/
+}
+
+#table1 {
+    /*position: relative;*/
+    /*left: 50%;*/
+    /*top: 50%;*/
+    /*-webkit-transform: translate(-50%, -50%);*/
+    /*-ms-transform: translate(-50%, -50%);*/
+    /*transform: translate(-50%, -50%);*/
+
+    /*display: flex;*/
+    /*row: center;*/
+    /*column: center;*/
+
+
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 15%;
+
+
+}
+
+.bgi {
+    background-image: url("../img/bg.png");
+    background-repeat: no-repeat;
+    /*background-size: 100% 100%;*/
+}
+
+
+#sp {
+    width: 194px;
+    height: 194px;
+}
+

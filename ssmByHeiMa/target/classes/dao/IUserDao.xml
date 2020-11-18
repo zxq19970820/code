@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.zxq.dao.IUserDao">
+
+    <delete id="deleteUserById" parameterType="integer">
+        delete from user where  id=#{userId}
+    </delete>
+
+
+    <select id="findById" resultType="com.zxq.domain.User">
+        select * from user  where id=#{userId}
+    </select>
+
+    <select id="findByName" resultType="com.zxq.domain.User">
+        select * from user where username like #{name}
+    </select>
+
+
+    <select id="findTotal" resultType="int">
+            select count(id)  from user;
+    </select>
+
+    <!-- 根据用户名称模糊查询，参数变成一个 QueryVo 对象了 -->
+    <!--  {user.username}默认是QuerVo的属性  -->
+    <select id="findByVo" resultType="com.zxq.domain.User"
+            parameterType="com.zxq.domain.QueryVo">
+
+            select * from user where username like #{user.username};
+    </select>
+
+
+    <!--    保存用户           parameterType表示参数类型-->
+    <!--   <insert id="saveUser" parameterType="com.zxq.domain.User">-->
+    <!--       insert into user(username,address,sex,birthday)-->
+    <!--            values(#{username},#{address},#{sex},#{birthday});-->
+    <!--    </insert>-->
+
+
+    <insert id="saveUser" parameterType="com.zxq.domain.User">
+        <!-- 配置保存时获取插入的 id      keyColumn数据库的列   keyProperty类名属性 -->
+        <selectKey keyColumn="id" keyProperty="id" resultType="int">
+            select last_insert_id();
+        </selectKey>
+        insert into user(username,birthday,sex,address)
+        values(#{username},#{birthday},#{sex},#{address})
+    </insert>
+
+    <update id="updateUser" parameterType="com.zxq.domain.User">
+        update user
+        set username=#{username},address=#{address},sex=#{sex},birthday=#{birthday}
+        where id=#{id};
+    </update>
+
+
+    <!--    动态sql-->
+
+
+    <!--    根据条件查询          if-->
+    <!--        <select id="findUserByCondition" resultType="User" parameterType="User">-->
+    <!--            select  * from user where 1=1-->
+    <!--            <if test="username!=null">-->
+    <!--                and  username=#{username}-->
+    <!--            </if>-->
+    <!--            <if test="sex!=null">-->
+    <!--                and sex=#{sex}-->
+    <!--            </if>-->
+
+
+    <!--    </select>-->
+
+    <!--    根据条件查询         where-->
+    <select id="findUserByCondition" resultType="User" parameterType="User">
+        select * from user
+        <where>
+            <if test="username!=null">
+                and username=#{username}
+            </if>
+            <if test="sex!=null">
+                and sex=#{sex}
+            </if>
+        </where>
+
+    </select>
+
+    <!--    根据queryvo中的id集合实现查询用户列表-->
+    <!--    <foreach>标签用于遍历集合，它的属性：
+    collection:代表要遍历的集合元素，注意编写时不要写#{}
+    open:代表语句的开始部分
+    close:代表结束部分
+    item:代表遍历集合的每个元素，生成的变量名
+    sperator:代表分隔符
+    -->
+    <select id="findUserInIds" resultType="com.zxq.domain.User" parameterType="QueryVo">
+        select * from user
+        <where>
+       id in
+
+            <if test="ids!=null and ids.size()>0">
+                <foreach collection="ids" open="(" close=")" item="id" separator=",">
+                    #{id}
+                </foreach>
+
+            </if>
+        </where>
+
+    </select>
+
+
+    <resultMap id="userAccountMap" type="User">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="address" column="address"></result>
+        <result column="sex" property="sex"/>
+        <result column="birthday" property="birthday"/>
+        <!-- collection 是用于建立一对多中集合属性的对应关系,ofType 用于指定集合元素的数据类型
+-->
+        <collection property="accounts" ofType="com.zxq.domain.Account">
+            <id column="aid" property="id"/>
+            <result column="uid" property="uid"/>
+            <result column="money" property="money"/>
+        </collection>
+
+        <!--        collection  部分定义了用户关联的账户信息。表示关联查询结果集-->
+        <!--        property="accounts"：    关联查询的结果集存储在 User 对象的上哪个属性。-->
+        <!--        ofType="account"： 指定关联查询的结果集中的对象类型即 List 中的对象类型。此处可以使用别名，也可以使用全限定名。-->
+
+    </resultMap>
+
+    <!--    配置查询所有-->
+    <select id="findAll" resultMap="userAccountMap">
+       SELECT u.*, acc.id id,acc.uid,acc.money
+	   FROM user u
+	   LEFT JOIN account acc
+        ON u.id = acc.uid
+    </select>
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

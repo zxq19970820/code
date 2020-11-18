@@ -1,0 +1,23 @@
+server:
+  port: 9001  #端口号
+
+spring:
+  application:
+    name: PRODUCT-SERVICE   #服务名称
+  datasource:    #以下为驱动连接
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+  jpa:  #JPA配置
+    database: MySQL
+    show-sql: true
+    open-in-view: true  #一次请求之后不关闭，直到业务逻辑结束后才关闭
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/  #如果不写defaultZone默认使用8761访问注册中心  #注册的路径（服务器）   将自己的服务注册到这台机器上去
+  instance:
+    prefer-ip-address: false
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}

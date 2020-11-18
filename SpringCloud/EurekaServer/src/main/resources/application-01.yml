@@ -1,0 +1,25 @@
+#表示注册中心的端口号
+server:
+  port: 8761
+
+#配置名称：显示在Application中
+spring:
+  application:
+    name: EUREKA-SERVER  #命名
+
+eureka:
+  instance:
+    hostname: localhost   #   注册中心主机名称
+
+  client:  #客户端
+    register-with-eureka: false    #是否将自己注册到列表
+    fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  #如果不写defaultZone默认使用8761访问注册中心  #注册的路径（服务器）   将自己的服务注册到这台机器上去
+        defaultZone: http://local:8762/eureka/
+  server:
+    enable-self-preservation=false:eureka-service-url-poll-interval-seconds: 30
+
+
+
+

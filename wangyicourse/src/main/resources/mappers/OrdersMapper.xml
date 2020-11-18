@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangyicourse.mappers.OrdersMapper">
+  <resultMap id="BaseResultMap" type="com.wangyicourse.entity.Orders">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="ordernum" jdbcType="VARCHAR" property="ordernum" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="totalprice" jdbcType="DECIMAL" property="totalprice" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+  </resultMap>
+  <!--自定义resultmap-->
+  <resultMap id="displayOrders" type="com.wangyicourse.entity.Orders">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="ordernum" jdbcType="VARCHAR" property="ordernum" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="totalprice" jdbcType="DECIMAL" property="totalprice" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+    <collection property="orderItemList" ofType="com.wangyicourse.entity.OrderItem">
+      <id column="odid" jdbcType="INTEGER" property="id" />
+      <result column="courseid" jdbcType="INTEGER" property="courseid" />
+      <result column="ordernum" jdbcType="VARCHAR" property="ordernum" />
+      <result column="secondordernum" jdbcType="VARCHAR" property="secondordernum" />
+      <association property="course" javaType="com.wangyicourse.entity.Course" >
+        <id column="cid" jdbcType="INTEGER" property="id" />
+        <result column="coursename" jdbcType="VARCHAR" property="coursename" />
+        <result column="courseprice" jdbcType="DECIMAL" property="courseprice" />
+        <result column="subscribenum" jdbcType="INTEGER" property="subscribenum" />
+        <result column="coursehour" jdbcType="INTEGER" property="coursehour" />
+        <result column="category3id" jdbcType="INTEGER" property="category3id" />
+        <result column="viewsrc" jdbcType="VARCHAR" property="viewsrc" />
+        <result column="publish" jdbcType="VARCHAR" property="publish" />
+        <result column="discount" jdbcType="INTEGER" property="discount" />
+        <result column="validtime" jdbcType="VARCHAR" property="validtime" />
+        <result column="institutionid" jdbcType="INTEGER" property="institutionid" />
+      </association>
+    </collection>
+  </resultMap>
+
+  <select id="selectOrderByUserId" resultMap="displayOrders">
+    select * ,
+    ot.id odid ,
+    c.id cid
+    from orders o
+    join orderitem ot on o.ordernum=ot.ordernum
+    join course c on ot.courseid=c.id
+    where o.userid=#{userid};
+  </select>
+  <select id="selectOrderByUserIdAndState" resultMap="displayOrders">
+    select * ,
+    ot.id odid ,
+    c.id cid
+    from orders o
+    join orderitem ot on o.ordernum=ot.ordernum
+    join course c on ot.courseid=c.id
+    where o.userid=#{userid} and o.state=#{state};
+  </select>
+  <select id="selectOrderByUserIdAndOrderId" resultMap="displayOrders">
+    select * ,
+    ot.id odid ,
+    c.id cid
+    from orders o
+    join orderitem ot on o.ordernum=ot.ordernum
+    join course c on ot.courseid=c.id
+    where o.userid=#{userid} and o.id=#{orderId};
+  </select>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, ordernum, createtime, totalprice, userid, state
+  </sql>
+  <select id="selectByExample" parameterType="com.wangyicourse.entity.OrdersExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from orders
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from orders
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wangyicourse.entity.OrdersExample">
+    delete from orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wangyicourse.entity.Orders">
+    insert into orders (id, ordernum, createtime, 
+      totalprice, userid, state
+      )
+    values (#{id,jdbcType=INTEGER}, #{ordernum,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{totalprice,jdbcType=DECIMAL}, #{userid,jdbcType=INTEGER}, #{state,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wangyicourse.entity.Orders">
+    insert into orders
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="ordernum != null">
+        ordernum,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="totalprice != null">
+        totalprice,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="ordernum != null">
+        #{ordernum,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="totalprice != null">
+        #{totalprice,jdbcType=DECIMAL},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wangyicourse.entity.OrdersExample" resultType="java.lang.Long">
+    select count(*) from orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update orders
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.ordernum != null">
+        ordernum = #{record.ordernum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createtime != null">
+        createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.totalprice != null">
+        totalprice = #{record.totalprice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.userid != null">
+        userid = #{record.userid,jdbcType=INTEGER},
+      </if>
+      <if test="record.state != null">
+        state = #{record.state,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update orders
+    set id = #{record.id,jdbcType=INTEGER},
+      ordernum = #{record.ordernum,jdbcType=VARCHAR},
+      createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      totalprice = #{record.totalprice,jdbcType=DECIMAL},
+      userid = #{record.userid,jdbcType=INTEGER},
+      state = #{record.state,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wangyicourse.entity.Orders">
+    update orders
+    <set>
+      <if test="ordernum != null">
+        ordernum = #{ordernum,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="totalprice != null">
+        totalprice = #{totalprice,jdbcType=DECIMAL},
+      </if>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wangyicourse.entity.Orders">
+    update orders
+    set ordernum = #{ordernum,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      totalprice = #{totalprice,jdbcType=DECIMAL},
+      userid = #{userid,jdbcType=INTEGER},
+      state = #{state,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

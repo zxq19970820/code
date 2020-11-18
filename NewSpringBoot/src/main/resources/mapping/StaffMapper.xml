@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.example.mapper.StaffMapper">
+    <update id="updateJob">
+        update staff set job=#{job} where sid=#{sid}
+    </update>
+
+
+    <select id="getAll" resultType="com.example.pojo.Staff">
+        select  * from staff
+    </select>
+
+    <select id="getById" resultType="com.example.pojo.Staff">
+        select * from staff where sid=#{id}
+    </select>
+
+    <select id="getByJob" resultType="com.example.pojo.Staff">
+            select * from staff where job=#{job}
+    </select>
+
+    <select id="likeJob" resultType="com.example.pojo.Staff">
+        select  * from staff where  job like #{a}
+    </select>
+    <select id="likeJob2" resultType="com.example.pojo.Staff">
+                select  * from staff where  job like CONCAT('%',#{job},'%')
+    </select>
+
+    <select id="getbyDname" resultType="com.example.pojo.Staff">
+    select  * from staff where did=#{did}
+    </select>
+
+
+</mapper>

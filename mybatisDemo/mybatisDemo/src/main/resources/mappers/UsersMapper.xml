@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.mapper.UsersMapper">
+
+  <resultMap id="BaseResultMap" type="com.ssm.entity.Users">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, username, password
+  </sql>
+  <select id="selectByExample" parameterType="com.ssm.entity.UsersExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from users
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from users
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from users
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ssm.entity.UsersExample">
+    delete from users
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ssm.entity.Users">
+    insert into users (id, username, password
+      )
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ssm.entity.Users">
+    insert into users
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ssm.entity.UsersExample" resultType="java.lang.Long">
+    select count(*) from users
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+
+    <update id="updateByExampleSelective" parameterType="map">
+    update users
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.username != null">
+        username = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null">
+        password = #{record.password,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update users
+    set id = #{record.id,jdbcType=INTEGER},
+      username = #{record.username,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssm.entity.Users">
+    update users
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ssm.entity.Users">
+    update users
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+
+<!--  自定义部分-->
+
+<!--  <select id="selectUsersByUsername" resultType="com.ssm.entity.Users"></select>-->
+
+  <!--type：返回结果可以用哪个pojo表示，POJO全限定名-->
+  <resultMap id="userscart" type="com.ssm.entity.Users">
+    <!--Users实体类中属性与映射表users中的字段对应关系   ,用id表示主键，result表示其他字段
+    column：表中的字段名        property: pojo中的属性名-->
+
+    <id column="id" property="id"></id>
+    <result column="username" property="username"></result>
+    <result column="password" property="password"></result>
+
+
+    <!-- collection标签表示Users中的集合属性 -->
+
+
+    <!-- association标签表示Users中的实体类属性，1:1  ,添加javaType属性：表示POJO的全限定名 -->
+    <association property="cart" javaType="com.ssm.entity.Cart">
+      <!-- 关联的POJO的属性和字段的对应关系 -->
+      <id column="id" property="id"></id>
+      <result column="uid" property="uid"></result>
+      <result column="pcount" property="pcount"></result>
+    </association>
+  </resultMap>
+
+
+  <!--根据用户名查询用户，包括购物车信息
+  resultType：表示方法的返回值，表示对应的Users能够将sql查询结果展示出来，针对于单表操作结果-->
+  <select id="selectUsersByUsername" resultMap="userscart">
+        select u.username,c.id,c.pcount  from  users u,cart c
+            where u.id = c.uid and u.username=#{uname};
+    </select>
+
+
+
+  <!--select\update\insert\delete等各种SQL语句标签-->
+  <!--id唯一，跟UsersMapper接口中的方法名关联，
+  resultType表示查询结果，类的全限定名com.ssm.entity.Users   List<Users> : 返回值是集合看泛型 -->
+  <select id="selectAllUsers" resultType="com.ssm.entity.Users">
+        select * from users
+    </select>
+  <select id="selectUsersById" resultType="com.ssm.entity.Users">
+        select  * from  users   where id = #{uid}
+    </select>
+  <select id="selectUsers" resultType="java.util.Map">
+        select * from users
+    </select>
+  <update id="updateUsersById1">
+        update users set username = #{uname}  where id = #{id}
+    </update>
+  <update id="updateUsersById2">
+        update users set username = #{username}  where id = #{id}
+    </update>
+
+</mapper>

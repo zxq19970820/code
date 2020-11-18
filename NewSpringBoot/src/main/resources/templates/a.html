@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>欢迎
+    <span style="color: red">
+        <i>[[${guest}]]</i>
+    </span> ,上午好
+</h1>
+
+
+<h2 th:text=" 'Hello，'  +   ${guest}  + '，大扎好' ">welcome!!!</h2>
+<h2 th:text=" |Hello   ${guest},  大扎好!!!  | ">welcome!!!</h2>
+<h2 th:utext=" |  Hello <i>${guest},大扎好</i>, |  ">welcome!!!</h2>
+
+<div>
+    <span th:if="${num > 1 }" >
+        今天是第[[${session.num}]]次登陆
+    </span>
+     <span th:unless=" ${num >1 }" >
+     欢迎首次登陆
+    </span>
+
+
+</div>
+</body>
+</html>

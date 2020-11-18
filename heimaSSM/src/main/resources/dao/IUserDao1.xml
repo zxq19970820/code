@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--仅用于多对多-->
+
+<mapper namespace="com.zxq.dao.IUserDao1">
+
+    <select id="findUserInIds" resultType="com.zxq.domain.User" parameterType="QueryVo">
+        select *from user
+        <where>
+            <if test="ids!=null and ids.size()>0">
+                <foreach collection="ids" open="and id in(" close=")" item="id" separator=",">
+                    #{id}
+                </foreach>
+
+            </if>
+        </where>
+
+    </select>
+
+
+    <resultMap id="userAccountMap" type="User">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="address" column="address"></result>
+        <result column="sex" property="sex"/>
+        <result column="birthday" property="birthday"/>
+
+    </resultMap>
+
+    <!--    配置查询所有-->
+    <select id="findAll" resultMap="userAccountMap">
+       SELECT u.*, acc.id id,acc.uid,acc.money
+	   FROM user u
+    </select>
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

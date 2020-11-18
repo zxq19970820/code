@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--    bean表示实体类，
+    beans中包含很多bean-java实体类:  自定义entity（企业项目用得少）
+                              或者  业务层(Service+dao 推荐使用)
+                              或者  第三方实体类（推荐使用）
+     -->
+
+    <!--    给属性赋值setter，添加子标签property
+    name表示属性名，属性值可以用value（常量值）或者ref（关联其他Bean关系,1:1,1：n,或者是集合）表示
+    -->
+    <bean id="stu1" class="com.spring.entity.Student">
+        <!--student类的setId（1950312218）关联-->
+        <property name="id" value="1950312218"></property>
+        <property name="stuName" value="李四"></property>
+        <property name="age" value="24"></property>
+        <property name="grade" value="中软java12班"></property>
+
+
+
+        <!--如果属性是自定义的类    property name ref-->
+
+        <property name="classRoom">
+
+            <bean class="com.spring.entity.ClassRoom">
+                <!--        此时classRoom中没有setter方法-->
+<!--                <property name="roomName" value="d413"></property>-->
+<!--                <property name="size" value="60"></property>-->
+                <constructor-arg name="roomName"  value="实训c403"></constructor-arg>
+                <constructor-arg name="size" value="60"></constructor-arg>
+            </bean>
+
+        </property>
+
+    </bean>
+
+
+
+    <!--            spring创建bean时，采取的是单例模式:<bean>标签只会new一次对象
+    scope表示bean作用范围，"singleton"单例模式，默认的值，
+                          "prototype"原型模式，每次getBean重新创建一个对象
+    -->
+    <bean id="stu2" class="com.spring.entity.Student" scope="singleton">
+        <!--student类的setId（1950312218）关联-->
+        <property name="id" value="1950392218"></property>
+        <property name="stuName" value="李天"></property>
+        <property name="age" value="#{2020-1996}"></property>
+        <property name="grade" value="中软java12班"></property>
+
+
+        <property name="standard" value="#{((70/(1.8*1.8) ge 18.5)and (70/(1.8*1.8) )le 23.9)?true:false}"></property>
+
+
+
+        <!--    1:1关系属性   ref="d413"(可以用property属性或加子标签)-->
+
+
+        <property name="classRoom">
+
+            <bean class="com.spring.entity.ClassRoom">
+                <property name="roomName" value="d413"></property>
+                <property name="size" value="60"></property>
+            </bean>
+
+        </property>
+<!--        <property name="classRoom" ref="d413"></property>-->
+
+
+        <!--               构造对象MobilePhone对象-->
+
+                <property name="mobilePhoneList">
+                    <list>
+
+                        <ref bean="p30"></ref>
+                        <ref bean="p40"></ref>
+
+                    </list>
+                </property>
+
+<!--        <property name="mobilePhoneList" ref="listphones"></property>-->
+
+
+
+<!--        <property name="mobilePhoneMap">-->
+
+<!--&lt;!&ndash;            phone1是p30对象&ndash;&gt;-->
+<!--            <map>-->
+<!--                    <entry key="phone1" value-ref="p30" ></entry>-->
+<!--                    <entry key="phone2" value-ref="p30" ></entry>-->
+<!--            </map>-->
+<!--        </property>-->
+        <property name="mobilePhoneMap" ref="mapphons" ></property>
+
+    </bean>
+
+
+
+
+    <bean id="stu3" class="com.spring.entity.Student">
+        <!--student类的setId（1950312218）关联-->
+        <property name="id" value="1950312215"></property>
+        <property name="stuName" value="张三"></property>
+        <property name="age" value="24"></property>
+        <property name="grade" value="中软java12班"></property>
+
+
+        <property name="classRoom">
+            <ref bean="d413"></ref>
+
+        </property>
+
+
+        <!--    1:n关系属性  -->
+
+        <property name="mobilePhoneList">
+            <list>
+                <!--               构造对象MobilePhone对象-->
+                <ref bean="p30"></ref>
+                <ref bean="p40"></ref>
+                <ref bean="mate30"></ref>
+            </list>
+        </property>
+
+    </bean>
+
+
+
+
+    <!--    util命名空间,表示集合-->
+    <util:list id="listphones">
+        <null></null>
+        <ref bean="p30"></ref>
+        <ref bean="p40"></ref>
+
+    </util:list>
+
+
+    <util:map id="mapphons">
+        <entry key="phone3">
+            <ref bean="p30"></ref>
+        </entry>
+    </util:map>
+
+
+    <bean id="d413" class="com.spring.entity.ClassRoom">
+<!--        <property name="size" value="60"></property>-->
+<!--        <property name="roomName" value="d413"></property>-->
+
+
+        <!--      type,name,index表示参数，任选一个  name="roomName" index="0"  String roomName, int size-->
+        <constructor-arg  name="roomName" value="实训413"></constructor-arg>
+        <constructor-arg name="size" value="30"></constructor-arg>
+
+    </bean>
+
+    <bean id="p30" class="com.spring.entity.MobilePhone">
+<!--        <property name="brand" value="华为"></property>-->
+<!--        <property name="type" value="p30"></property>-->
+        <constructor-arg name="brand" value="华为"></constructor-arg>
+        <constructor-arg name="type" value="p30"></constructor-arg>
+    </bean>
+
+    <bean id="p40" class="com.spring.entity.MobilePhone">
+        <property name="brand" value="华为"></property>
+        <property name="type" value="p40"></property>
+    </bean>
+
+    <bean id="mate30" class="com.spring.entity.MobilePhone">
+        <property name="brand" value="华为"></property>
+        <property name="type" value="mate30pro"></property>
+    </bean>
+
+
+</beans>

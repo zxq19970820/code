@@ -1,0 +1,29 @@
+#配置datasource
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/hmybaytis?serverTimezone=UTC
+    username: root
+    password: root
+  redis:
+    #配置redis0
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+
+  #开启隐藏方法过滤器，识别put和delete请求
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+
+    # 配置逻辑删除
+mybatis-plus:
+  configuration:    #能看到sql语句
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:  #逻辑删除
+    db-config:
+      logic-delete-value: 1   #已删除
+      logic-not-delete-value: 0   #未删除
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.zxq.doamin

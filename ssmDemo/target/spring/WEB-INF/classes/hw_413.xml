@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="u1" class="com.spring.entity.Users">
+        <property name="id" value="1"></property>
+        <property name="username" value="张三"></property>
+        <property name="password" value="123"></property>
+
+
+    </bean>
+
+
+    <bean id="c2" class="com.spring.entity.Cart">
+
+        <constructor-arg name="id" value="2"></constructor-arg>
+        <constructor-arg name="uid" value="2"></constructor-arg>
+        <constructor-arg name="pcount" value="3"></constructor-arg>
+        <constructor-arg name="productsMap" ref="prosMap"></constructor-arg>
+        <constructor-arg name="productSet" ref="prosSet"></constructor-arg>
+
+    </bean>
+
+
+    <util:map id="prosMap">
+        <entry key="p1">
+            <ref bean="p1"></ref>
+        </entry>
+
+        <entry key="p2">
+            <ref bean="p2"></ref>
+        </entry>
+
+        <entry key="p3">
+            <ref bean="p3"></ref>
+        </entry>
+
+    </util:map>
+
+
+    <util:set id="prosSet">
+        <ref bean="p1"></ref>
+        <ref bean="p2"></ref>
+        <ref bean="p3"></ref>
+
+    </util:set>
+
+    <bean id="p1" class="com.spring.entity.Product">
+
+        <constructor-arg name="id" value="1"></constructor-arg>
+        <constructor-arg name="pname" value="卫龙辣条"></constructor-arg>
+        <constructor-arg name="pinventory" value="100"></constructor-arg>
+        <constructor-arg name="pprice" value="10"></constructor-arg>
+        <constructor-arg name="picon" value="xxx"></constructor-arg>
+        <constructor-arg name="plocation" value="北京"></constructor-arg>
+        <constructor-arg name="pviews" value="992"></constructor-arg>
+
+    </bean>
+
+
+    <bean id="p2" class="com.spring.entity.Product">
+        <constructor-arg name="id" value="3"></constructor-arg>
+        <constructor-arg name="pname" value="牛肉干"></constructor-arg>
+        <constructor-arg name="pinventory" value="100"></constructor-arg>
+        <constructor-arg name="pprice" value="90"></constructor-arg>
+        <constructor-arg name="picon" value="xxx"></constructor-arg>
+        <constructor-arg name="plocation" value="内蒙古"></constructor-arg>
+        <constructor-arg name="pviews" value="999"></constructor-arg>
+    </bean>
+
+    <bean id="p3" class="com.spring.entity.Product">
+
+        <constructor-arg name="id" value="3"></constructor-arg>
+        <constructor-arg name="pname" value="牛肉干"></constructor-arg>
+        <constructor-arg name="pinventory" value="100"></constructor-arg>
+        <constructor-arg name="pprice" value="90"></constructor-arg>
+        <constructor-arg name="picon" value="xxx"></constructor-arg>
+        <constructor-arg name="plocation" value="内蒙古"></constructor-arg>
+        <constructor-arg name="pviews" value="992"></constructor-arg>
+
+    </bean>
+
+</beans>

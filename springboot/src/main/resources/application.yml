@@ -1,0 +1,63 @@
+server:
+  port: 8080
+
+#设置thymeleaf不缓存
+spring:
+  #激活profile==prod
+  profiles:
+    active: prod
+  thymeleaf:
+    cache: false
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  datasource:
+   driver-class-name: com.mysql.jdbc.Driver
+   url: jdbc:mysql://localhost:3306/hmybaytis?useUnicode=true&amp;characterEncoding=UTF-8
+   username: root
+   password: root
+   hikari:
+     maximum-pool-size: 2
+
+
+student:
+    student-name: 德玛西亚
+    age: 998
+    sex: true
+    birth: 2222/02/02
+    maps:
+      k1: v1
+      k2: v2
+      k3: v3
+    lists:
+      - lisi
+      - zhangsan
+    book:
+      book-name: "德玛西亚"
+      author: "哈哈哈哈哈"
+
+logging:
+    level:
+       com:
+         zxq: debug
+
+#配置mybatis
+mybatis:
+  #配置mapper映射的路径
+  mapper-locations: classpath:mapping/*Mapper.xml
+  #配置别名扫描
+  type-aliases-package: com.zxq.domain
+
+
+
+---
+server:
+  port: 8082
+spring:
+  profiles: dev
+---
+server:
+  port: 8083
+spring:
+  profiles: prod

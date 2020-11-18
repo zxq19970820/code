@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+    <!--    <bean id="map" name="com.spring.entity.MobilePhone">-->
+    <!--        <property name="type" value="华为p30"></property>-->
+    <!--    </bean>-->
+
+
+    <!--   包扫描标签标识-->
+    <!--    添加mvc分层之后，spring扫描的包是Service层和dao层-->
+    <context:component-scan base-package="com.spring"></context:component-scan>
+
+
+
+    <!--        web项目能够加载异步请求响应的数据，spring配置文件中添加配置JSON核心解析JSON数据： fast json解析工具 -->
+    <mvc:annotation-driven>
+    <mvc:message-converters>
+            <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json;charset=utf-8</value>
+                        <value>text/json;charset=utf-8</value>
+                        <value>text/html;charset=utf-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <!--    mybatis配置文件中添加配置  2个必须  environments数据源，mappers映射的配置文件-->
+    <!--    在spring配置文件汇总整合-->
+
+    <!--    其他配置：别名，setting等，加载mybatis配置文件-->
+    <!--    添加sqlSessionFactory配置 ————》 session   接口方法-->
+    <!--    通过bean标签体现-->
+    <!--    -->
+
+
+    <!--加载db.properties文件-->
+    <bean id="db" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+
+        <property name="location" value="classpath:db.properties"></property>
+    </bean>
+
+
+
+
+
+    <!--    mappers 映射配置文件，添加对应接口-->
+    <bean id="mapping" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.spring.mapping"></property>
+
+    </bean>
+
+
+    <!--    添加sqlSessionFactory配置-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--        引用数据源-->
+        <property name="dataSource" ref="dataSource"></property>
+
+        <!--    mappers映射配置文件    -->
+        <property name="mapperLocations" value="classpath:mapping/*.xml"></property>
+
+        <!--        mybatis配置文件-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+
+
+    </bean>
+
+    <!--    Spring中整合数据源，使用Spring中的jdbc模块-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <!--    给属性赋值：属性注入-->
+        <property name="driverClassName" value="${db.driver}"/>
+        <property name="url" value="${db.url}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+    </bean>
+    <!--        视图解析 ViewTemplate-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+
+
+        <!--                  jstl标签库一：引入依赖jstl和standard-->
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
+        <property name="prefix" value="/views/"></property><!-- 前缀-->
+        <property name="suffix" value=".jsp"></property>    <!-- 后缀-->
+
+    </bean>
+
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

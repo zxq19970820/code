@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--仅用于多对多-->
+
+<mapper namespace="com.zxq.dao.RoleDao">
+
+    <resultMap id="roleMap" type="com.zxq.domain.role">
+        <id property="roleId" column="id"></id>
+        <result property="roleName" column="role_name"></result>
+        <result property="roleDesc" column="role_desc"></result>
+    </resultMap>
+
+<!--    查询所有-->
+    <select id="findAll" resultMap="roleMap">
+
+    </select>
+
+
+</mapper>

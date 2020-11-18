@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3 th:text="|当前操作界面 #{app.title} |">页面标题</h3>
+
+<div>
+    <form action="">
+        <select name="" id="role_id">
+
+        </select>
+        <input type="submit" value="查询">
+    </form>
+
+
+
+
+    <table cellspacing="0" border="1">
+        <tr>
+
+            <td>账号编号</td>
+            <td>账号密码</td>
+            <td>账号昵称</td>
+            <td>账号角色</td>
+            <td>编辑</td>
+        </tr>
+
+        <tr th:each="item:${accountInfo}">
+            <td th:text=" ${accountInfo} ">账户编号</td>
+            <td th:text=" ${item.pwd} ">账户密码</td>
+            <td th:text=" ${item.nick} ">账户昵称</td>
+            <td th:text=" ${item.rid} ">账户角色</td>
+            <td>
+                <a th:href="|mod?id=${item.uid}|">编辑1</a>
+                <a th:href="@{mod(id=${item.uid})}">编辑2</a>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>

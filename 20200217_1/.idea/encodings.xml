@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/practice/src/NET/udp/udp_client.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practice/src/NET/udp/udp_server.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practice/src/NET/udp_client.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practice/src/NET/udp_server.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practice/src/dxc/shaoshui.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/practice/src/dxc/t.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/practice/src/dxc/xiBeiZi.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/practice/src/iopractice/create_test.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/practice/src/tcp_pricrtice/ClientDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practice/src/tcp_pricrtice/serverTest.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practice/src/udp/udp__Client.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practice/src/udp/udp__server.java" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

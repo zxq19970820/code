@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--仅用于多对多-->
+
+<mapper namespace="com.zxq.mappers.RoleMapper">
+
+    <resultMap id="roleMap" type="com.zxq.domain.Role">
+        <id property="roleId" column="rid"></id>
+        <result property="roleName" column="role_name"></result>
+        <result property="roleDesc" column="role_desc"></result>
+
+        <collection property="users" ofType="User1">
+            <id column="id" property="id"/>
+            <result column="username" property="username"/>
+            <result column="address" property="address"/>
+            <result column="sex" property="sex"/>
+            <result column="birthday" property="birthday"/>
+
+        </collection>
+    </resultMap>
+
+<!--    查询所有-->
+    <select id="findAll" resultMap="roleMap">
+        SELECT r.id rid,r.role_name,r.role_desc ,u.*,r.id rid,r.role_name,r.role_desc
+        FROM role r
+        LEFT OUTER JOIN user_role ur
+        on r.id=ur.rid
+        LEFT OUTER  JOIN `user` u
+        on u.id=ur.uid
+    </select>
+
+
+</mapper>

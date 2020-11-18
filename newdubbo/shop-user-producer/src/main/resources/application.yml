@@ -1,0 +1,11 @@
+#将服务提供者注册到注册中心
+dubbo:
+  #配置服务提供者名称
+  application:
+    name: "hello-provider"
+  #注册中心
+  registry:
+    address: "zookeeper://192.168.186.128:2181"
+  #服务扫描的包
+  scan:
+    base-packages: "com.zxq.service"

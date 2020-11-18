@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangyicourse.mappers.CourseMapper">
+  <resultMap id="BaseResultMap" type="com.wangyicourse.entity.Course">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="coursename" jdbcType="VARCHAR" property="coursename" />
+    <result column="courseprice" jdbcType="DECIMAL" property="courseprice" />
+    <result column="subscribenum" jdbcType="INTEGER" property="subscribenum" />
+    <result column="coursehour" jdbcType="INTEGER" property="coursehour" />
+    <result column="category3id" jdbcType="INTEGER" property="category3id" />
+    <result column="viewsrc" jdbcType="VARCHAR" property="viewsrc" />
+    <result column="publish" jdbcType="VARCHAR" property="publish" />
+    <result column="discount" jdbcType="INTEGER" property="discount" />
+    <result column="validtime" jdbcType="VARCHAR" property="validtime" />
+    <result column="institutionid" jdbcType="INTEGER" property="institutionid" />
+  </resultMap>
+  <!--郑娅-->
+  <!--自定义查询-->
+  <resultMap id="allCourses" type="com.wangyicourse.entity.Course" extends="BaseResultMap">
+    <collection property="chapters" ofType="com.wangyicourse.entity.Chapter" column="{courseid=id}" select="selectChapters">
+    </collection>
+  </resultMap>
+  <!--  自定义查询-->
+  <select id="findAllChaptersById" resultMap="allCourses">
+    select * from course id=#{courseid}
+  </select>
+  <select id="selectChapters" resultMap="com.wangyicourse.mappers.ChapterMapper.BaseResultMap">
+    select * from chapter where courseid = #{courseid}
+  </select>
+  <!--郑娅-->
+
+  <!--张鹤龄-->
+  <resultMap id="courseDetails" type="com.wangyicourse.entity.Course" extends="BaseResultMap">
+    <association property="institution" javaType="com.wangyicourse.entity.Institution">
+      <id column="inid" jdbcType="INTEGER" property="id" />
+      <result column="inname" jdbcType="VARCHAR" property="inname" />
+      <result column="inpassword" jdbcType="VARCHAR" property="inpassword" />
+      <result column="describe" jdbcType="VARCHAR" property="describe" />
+      <result column="iconsrc" jdbcType="VARCHAR" property="iconsrc" />
+    </association>
+
+
+    <association property="courseDetails"  javaType="com.wangyicourse.entity.CourseDetails">
+      <id column="cdeid" jdbcType="INTEGER" property="id" />
+      <result column="courseid" jdbcType="INTEGER" property="courseid" />
+      <result column="people" jdbcType="VARCHAR" property="people" />
+      <result column="coursedescribe" jdbcType="VARCHAR" property="coursedescribe" />
+      <collection property="courseDetailsIcons" ofType="com.wangyicourse.entity.CourseDetailsIcon">
+        <id column="cdiid" jdbcType="INTEGER" property="id" />
+        <result column="coursedetailsid" jdbcType="INTEGER" property="coursedetailsid" />
+        <result column="coursedetailsiconsrc" jdbcType="VARCHAR" property="coursedetailsiconsrc" />
+      </collection>
+    </association>
+    <collection property="chapters" ofType="com.wangyicourse.entity.Chapter">
+      <id column="chid" jdbcType="INTEGER" property="id" />
+      <result column="chaptername" jdbcType="VARCHAR" property="chaptername" />
+      <result column="courseid" jdbcType="INTEGER" property="courseid" />
+      <collection property="sections" ofType="com.wangyicourse.entity.Section">
+        <id column="sid" jdbcType="INTEGER" property="id" />
+        <result column="sectionName" jdbcType="VARCHAR" property="sectionname" />
+        <result column="chapterId" jdbcType="INTEGER" property="chapterid" />
+        <result column="vedio" jdbcType="VARCHAR" property="vedio" />
+        <result column="inputtime" jdbcType="VARCHAR" property="inputtime" />
+      </collection>
+    </collection>
+  </resultMap>
+  <!--SectionMapper.xml    select * ,cdi.id cdiid,cde.id cdeid from course c join coursedetails cde on c.id=cde.courseid join coursedetailsicon cdi on cde.id =cdi.coursedetailsid join institution ins on c.institutionid=ins.id where courseid=#{courseid};
+-->
+  <select id="findCourseDetails" resultMap="courseDetails">
+    select * ,
+    cdi.id cdiid,
+    cde.id cdeid ,
+    ins.id inid ,
+    ch.id chid ,
+    s.id sid
+    from
+    course c join coursedetails cde on c.id=cde.courseid
+    join coursedetailsicon cdi on cde.id =cdi.coursedetailsid
+    join institution ins on c.institutionid=ins.id
+    join chapter ch on c.id=ch.courseid
+    join section s on ch.id=s.chapterid
+    where c.id=#{courseid};
+
+  </select>
+
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, coursename, courseprice, subscribenum, coursehour, category3id, viewsrc, publish, 
+    discount, validtime, institutionid
+  </sql>
+  <select id="selectByExample" parameterType="com.wangyicourse.entity.CourseExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from course
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from course
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from course
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wangyicourse.entity.CourseExample">
+    delete from course
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wangyicourse.entity.Course">
+    insert into course (id, coursename, courseprice, 
+      subscribenum, coursehour, category3id, 
+      viewsrc, publish, discount, 
+      validtime, institutionid)
+    values (#{id,jdbcType=INTEGER}, #{coursename,jdbcType=VARCHAR}, #{courseprice,jdbcType=DECIMAL}, 
+      #{subscribenum,jdbcType=INTEGER}, #{coursehour,jdbcType=INTEGER}, #{category3id,jdbcType=INTEGER}, 
+      #{viewsrc,jdbcType=VARCHAR}, #{publish,jdbcType=VARCHAR}, #{discount,jdbcType=INTEGER}, 
+      #{validtime,jdbcType=VARCHAR}, #{institutionid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wangyicourse.entity.Course">
+    insert into course
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="coursename != null">
+        coursename,
+      </if>
+      <if test="courseprice != null">
+        courseprice,
+      </if>
+      <if test="subscribenum != null">
+        subscribenum,
+      </if>
+      <if test="coursehour != null">
+        coursehour,
+      </if>
+      <if test="category3id != null">
+        category3id,
+      </if>
+      <if test="viewsrc != null">
+        viewsrc,
+      </if>
+      <if test="publish != null">
+        publish,
+      </if>
+      <if test="discount != null">
+        discount,
+      </if>
+      <if test="validtime != null">
+        validtime,
+      </if>
+      <if test="institutionid != null">
+        institutionid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="coursename != null">
+        #{coursename,jdbcType=VARCHAR},
+      </if>
+      <if test="courseprice != null">
+        #{courseprice,jdbcType=DECIMAL},
+      </if>
+      <if test="subscribenum != null">
+        #{subscribenum,jdbcType=INTEGER},
+      </if>
+      <if test="coursehour != null">
+        #{coursehour,jdbcType=INTEGER},
+      </if>
+      <if test="category3id != null">
+        #{category3id,jdbcType=INTEGER},
+      </if>
+      <if test="viewsrc != null">
+        #{viewsrc,jdbcType=VARCHAR},
+      </if>
+      <if test="publish != null">
+        #{publish,jdbcType=VARCHAR},
+      </if>
+      <if test="discount != null">
+        #{discount,jdbcType=INTEGER},
+      </if>
+      <if test="validtime != null">
+        #{validtime,jdbcType=VARCHAR},
+      </if>
+      <if test="institutionid != null">
+        #{institutionid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wangyicourse.entity.CourseExample" resultType="java.lang.Long">
+    select count(*) from course
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update course
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.coursename != null">
+        coursename = #{record.coursename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.courseprice != null">
+        courseprice = #{record.courseprice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.subscribenum != null">
+        subscribenum = #{record.subscribenum,jdbcType=INTEGER},
+      </if>
+      <if test="record.coursehour != null">
+        coursehour = #{record.coursehour,jdbcType=INTEGER},
+      </if>
+      <if test="record.category3id != null">
+        category3id = #{record.category3id,jdbcType=INTEGER},
+      </if>
+      <if test="record.viewsrc != null">
+        viewsrc = #{record.viewsrc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.publish != null">
+        publish = #{record.publish,jdbcType=VARCHAR},
+      </if>
+      <if test="record.discount != null">
+        discount = #{record.discount,jdbcType=INTEGER},
+      </if>
+      <if test="record.validtime != null">
+        validtime = #{record.validtime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.institutionid != null">
+        institutionid = #{record.institutionid,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update course
+    set id = #{record.id,jdbcType=INTEGER},
+      coursename = #{record.coursename,jdbcType=VARCHAR},
+      courseprice = #{record.courseprice,jdbcType=DECIMAL},
+      subscribenum = #{record.subscribenum,jdbcType=INTEGER},
+      coursehour = #{record.coursehour,jdbcType=INTEGER},
+      category3id = #{record.category3id,jdbcType=INTEGER},
+      viewsrc = #{record.viewsrc,jdbcType=VARCHAR},
+      publish = #{record.publish,jdbcType=VARCHAR},
+      discount = #{record.discount,jdbcType=INTEGER},
+      validtime = #{record.validtime,jdbcType=VARCHAR},
+      institutionid = #{record.institutionid,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wangyicourse.entity.Course">
+    update course
+    <set>
+      <if test="coursename != null">
+        coursename = #{coursename,jdbcType=VARCHAR},
+      </if>
+      <if test="courseprice != null">
+        courseprice = #{courseprice,jdbcType=DECIMAL},
+      </if>
+      <if test="subscribenum != null">
+        subscribenum = #{subscribenum,jdbcType=INTEGER},
+      </if>
+      <if test="coursehour != null">
+        coursehour = #{coursehour,jdbcType=INTEGER},
+      </if>
+      <if test="category3id != null">
+        category3id = #{category3id,jdbcType=INTEGER},
+      </if>
+      <if test="viewsrc != null">
+        viewsrc = #{viewsrc,jdbcType=VARCHAR},
+      </if>
+      <if test="publish != null">
+        publish = #{publish,jdbcType=VARCHAR},
+      </if>
+      <if test="discount != null">
+        discount = #{discount,jdbcType=INTEGER},
+      </if>
+      <if test="validtime != null">
+        validtime = #{validtime,jdbcType=VARCHAR},
+      </if>
+      <if test="institutionid != null">
+        institutionid = #{institutionid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wangyicourse.entity.Course">
+    update course
+    set coursename = #{coursename,jdbcType=VARCHAR},
+      courseprice = #{courseprice,jdbcType=DECIMAL},
+      subscribenum = #{subscribenum,jdbcType=INTEGER},
+      coursehour = #{coursehour,jdbcType=INTEGER},
+      category3id = #{category3id,jdbcType=INTEGER},
+      viewsrc = #{viewsrc,jdbcType=VARCHAR},
+      publish = #{publish,jdbcType=VARCHAR},
+      discount = #{discount,jdbcType=INTEGER},
+      validtime = #{validtime,jdbcType=VARCHAR},
+      institutionid = #{institutionid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <!--  新增-->
+
+
+  <select id="findTopFiveCourse" resultType="com.wangyicourse.entity.Course">
+    SELECT  * FROM course
+ORDER BY subscribenum DESC
+LIMIT  0,5
+  </select>
+
+</mapper>

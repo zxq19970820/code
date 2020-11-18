@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="tx02aop_myself" />
+        <module name="aop" />
+        <module name="tx01aop_xml" />
+        <module name="tx04aop_bianchengsi" />
+        <module name="jdbctemplate2" />
+        <module name="jdbcTemplate" />
+        <module name="tx" />
+        <module name="tx03aop_anno" />
+        <module name="tx05aop_anno_myself" />
+        <module name="proxy" />
+        <module name="annotationAop" />
+        <module name="jdbctemplete2" />
+        <module name="adviceType" />
+        <module name="myself" />
+        <module name="account" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="myself" options="" />
+    </option>
+  </component>
+</project>

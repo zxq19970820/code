@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/dubbo.iml" filepath="$PROJECT_DIR$/dubbo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-interface/shop-interface.iml" filepath="$PROJECT_DIR$/shop-interface/shop-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-user-consumer/shop-user-consumer.iml" filepath="$PROJECT_DIR$/shop-user-consumer/shop-user-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-user-producer/shop-user-producer.iml" filepath="$PROJECT_DIR$/shop-user-producer/shop-user-producer.iml" />
+    </modules>
+  </component>
+</project>

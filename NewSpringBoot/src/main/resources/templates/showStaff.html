@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="selectStaff" method="get">
+    <input type="text" name="did" placeholder="请输入查询内容">
+    <input type="submit" value="搜索">
+</form>
+
+
+<table cellspacing="0" border="1">
+    <tr>
+
+        <td>员工编号</td>
+        <td>员工姓名</td>
+        <td>部门编号</td>
+        <td>职务</td>
+    </tr>
+
+    <tr th:each="item:${allStaff}">
+        <td th:text=" ${item.sid} " th:href="updateStaff"> 员工编号</td>
+        <td th:text=" ${item.sname} ">员工姓名</td>
+        <td th:text=" ${item.did} ">部门编号</td>
+        <td th:text=" ${item.job} ">职务</td>
+        <td th:text="">修改信息</td>
+
+    </tr>
+
+</table>
+
+</div>
+
+</body>
+</html>

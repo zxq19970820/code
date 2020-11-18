@@ -1,0 +1,13 @@
+server:
+  port: 7001
+spring:
+  application:
+    name: PRODUCT-CUSTOMER
+  thymeleaf:
+    mode: HTML5
+    suffix: .html
+    prefix: classpath:/templates/
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

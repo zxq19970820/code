@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangyicourse.mappers.MyStudyMapper">
+  <resultMap id="BaseResultMap" type="com.wangyicourse.entity.MyStudy">
+    <id column="courseStudyId" jdbcType="INTEGER" property="coursestudyid" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="courseid" jdbcType="INTEGER" property="courseid" />
+  </resultMap>
+
+  <resultMap id="findAll" type="com.wangyicourse.entity.MyStudy" extends="BaseResultMap">
+    <association property="course" javaType="com.wangyicourse.entity.Course">
+      <id column="courseid" jdbcType="INTEGER" property="id" />
+      <result column="coursename" jdbcType="VARCHAR" property="coursename" />
+      <result column="courseprice" jdbcType="DECIMAL" property="courseprice" />
+      <result column="subscribenum" jdbcType="INTEGER" property="subscribenum" />
+      <result column="coursehour" jdbcType="INTEGER" property="coursehour" />
+      <result column="category3id" jdbcType="INTEGER" property="category3id" />
+      <result column="viewsrc" jdbcType="VARCHAR" property="viewsrc" />
+      <result column="publish" jdbcType="VARCHAR" property="publish" />
+      <result column="discount" jdbcType="INTEGER" property="discount" />
+      <result column="validtime" jdbcType="VARCHAR" property="validtime" />
+      <result column="institutionid" jdbcType="INTEGER" property="institutionid" />
+    </association>
+  </resultMap>
+  <select id="findAllStudy" resultMap="findAll">
+    select * ,co.id courseid from mystudy m join course co on m.courseid=co.id where userid=#{userid};
+  </select>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    courseStudyId, userid, courseid
+  </sql>
+  <select id="selectByExample" parameterType="com.wangyicourse.entity.MyStudyExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from mystudy
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mystudy
+    where courseStudyId = #{coursestudyid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mystudy
+    where courseStudyId = #{coursestudyid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wangyicourse.entity.MyStudyExample">
+    delete from mystudy
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wangyicourse.entity.MyStudy">
+    insert into mystudy (courseStudyId, userid, courseid
+      )
+    values (#{coursestudyid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{courseid,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wangyicourse.entity.MyStudy">
+    insert into mystudy
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="coursestudyid != null">
+        courseStudyId,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="courseid != null">
+        courseid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="coursestudyid != null">
+        #{coursestudyid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="courseid != null">
+        #{courseid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wangyicourse.entity.MyStudyExample" resultType="java.lang.Long">
+    select count(*) from mystudy
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update mystudy
+    <set>
+      <if test="record.coursestudyid != null">
+        courseStudyId = #{record.coursestudyid,jdbcType=INTEGER},
+      </if>
+      <if test="record.userid != null">
+        userid = #{record.userid,jdbcType=INTEGER},
+      </if>
+      <if test="record.courseid != null">
+        courseid = #{record.courseid,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update mystudy
+    set courseStudyId = #{record.coursestudyid,jdbcType=INTEGER},
+      userid = #{record.userid,jdbcType=INTEGER},
+      courseid = #{record.courseid,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wangyicourse.entity.MyStudy">
+    update mystudy
+    <set>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="courseid != null">
+        courseid = #{courseid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where courseStudyId = #{coursestudyid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wangyicourse.entity.MyStudy">
+    update mystudy
+    set userid = #{userid,jdbcType=INTEGER},
+      courseid = #{courseid,jdbcType=INTEGER}
+    where courseStudyId = #{coursestudyid,jdbcType=INTEGER}
+  </update>
+</mapper>

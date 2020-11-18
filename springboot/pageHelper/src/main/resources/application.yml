@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+#设置thymeleaf不缓存
+spring:
+  thymeleaf:
+    cache: false
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  datasource:
+   driver-class-name: com.mysql.jdbc.Driver
+   url: jdbc:mysql://localhost:3306/hmybaytis?useUnicode=true&amp;characterEncoding=UTF-8
+   username: root
+   password: root
+   hikari:
+     maximum-pool-size: 2
+
+logging:
+    level:
+       com:
+         zxq: info
+
+#配置mybatis
+mybatis:
+  #配置mapper映射的路径
+  mapper-locations: classpath:mapping/*Mapper.xml
+  #配置别名扫描
+  type-aliases-package: com.zxq.domain
+

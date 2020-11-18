@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="45b16a6d-1eca-4666-b9f5-fb393b3ef3f8" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="C:\Users\zhangxingqiang\.m2\repository" />
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+        <option name="userSettingsFile" value="C:\Users\zhangxingqiang\.m2\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1hWsp0YhfqFFiUInOstt4CTNjz7" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NewSpringmvc" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zxq.mapper" />
+      <recent name="" />
+      <recent name="com.zxq.domain" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\idea_data\NewMybatis\duoBiaoChaXun\src\test\java" />
+      <recent name="D:\idea_data\NewMybatis\duoBiaoChaXun\src\main\resources" />
+      <recent name="D:\idea_data\NewMybatis\duoBiaoChaXun\src\main\java" />
+      <recent name="D:\idea_data\NewMybatis\pageHelper\src\main\resources" />
+      <recent name="D:\idea_data\NewMybatis\pageterceptor\src\main\java\com\zxq" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.TestPageBean">
+    <configuration name="TestPageBean" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zxq.test.TestPageBean" />
+      <module name="PageInterceptor" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zxq.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Account1To1Test.selectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="duoBiaoChaXun" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Account1To1Test" />
+      <option name="METHOD_NAME" value="selectAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountTest.testFindAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NewMybatis" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AccountTest" />
+      <option name="METHOD_NAME" value="testFindAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoleDuoToDuoTest.getAllRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="duoBiaoChaXun" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RoleDuoToDuoTest" />
+      <option name="METHOD_NAME" value="getAllRole" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="User1ToDuoTest.select" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="duoBiaoChaXun" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="User1ToDuoTest" />
+      <option name="METHOD_NAME" value="select" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TestPageBean" />
+        <item itemvalue="JUnit.Account1To1Test.selectAll" />
+        <item itemvalue="JUnit.RoleDuoToDuoTest.getAllRole" />
+        <item itemvalue="JUnit.User1ToDuoTest.select" />
+        <item itemvalue="JUnit.AccountTest.testFindAll" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="45b16a6d-1eca-4666-b9f5-fb393b3ef3f8" name="Default Changelist" comment="" />
+      <created>1600138361535</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600138361535</updated>
+      <workItem from="1600138365288" duration="3956000" />
+      <workItem from="1600150135353" duration="7828000" />
+      <workItem from="1600162006412" duration="5714000" />
+      <workItem from="1600177700742" duration="338000" />
+      <workItem from="1600215370572" duration="885000" />
+      <workItem from="1600236500666" duration="881000" />
+      <workItem from="1600239443405" duration="1105000" />
+      <workItem from="1600246359189" duration="807000" />
+      <workItem from="1600258888068" duration="4000" />
+      <workItem from="1600261466930" duration="1521000" />
+      <workItem from="1600264614998" duration="1366000" />
+      <workItem from="1600301419036" duration="10493000" />
+      <workItem from="1600349945096" duration="329000" />
+      <workItem from="1600388317813" duration="1898000" />
+      <workItem from="1600390343462" duration="2353000" />
+      <workItem from="1600395716926" duration="122000" />
+      <workItem from="1600418724154" duration="13000" />
+      <workItem from="1600419408436" duration="52000" />
+      <workItem from="1600573040471" duration="22000" />
+      <workItem from="1601208976079" duration="328000" />
+      <workItem from="1601210391665" duration="3302000" />
+      <workItem from="1601254000181" duration="695000" />
+      <workItem from="1601257533986" duration="10803000" />
+      <workItem from="1601292894404" duration="138000" />
+      <workItem from="1601857760358" duration="285000" />
+      <workItem from="1601884346032" duration="23000" />
+      <workItem from="1601967554463" duration="802000" />
+      <workItem from="1602247021026" duration="837000" />
+      <workItem from="1603108316364" duration="1631000" />
+      <workItem from="1603154358972" duration="2745000" />
+      <workItem from="1603159790844" duration="15000" />
+      <workItem from="1603159867274" duration="9118000" />
+      <workItem from="1603180561507" duration="147000" />
+      <workItem from="1604057361765" duration="295000" />
+      <workItem from="1604730094660" duration="3666000" />
+      <workItem from="1604734254410" duration="841000" />
+      <workItem from="1604737204682" duration="904000" />
+      <workItem from="1604888160343" duration="90000" />
+      <workItem from="1605354806660" duration="65000" />
+      <workItem from="1605439810835" duration="10000" />
+      <workItem from="1605531587818" duration="1236000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="309" y="32" key="#Project_Structure" timestamp="1605354840501">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="275" y="28" key="#Project_Structure/0.0.1366.738@0.0.1366.738" timestamp="1603162705525" />
+    <state x="309" y="32" key="#Project_Structure/0.0.1536.834@0.0.1536.834" timestamp="1605354840501" />
+    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser" timestamp="1603161930292">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1603161930292" />
+    <state x="303" y="47" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1603163660927">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="303" y="47" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1366.738@0.0.1366.738" timestamp="1603163660927" />
+    <state x="408" y="343" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1604888185134">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="408" y="343" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.834@0.0.1536.834" timestamp="1604888185134" />
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600390668691">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1600390668691" />
+    <state x="364" y="220" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1603160957233">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="364" y="220" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.738@0.0.1366.738" timestamp="1603160957233" />
+    <state x="521" y="140" key="FileChooserDialogImpl" timestamp="1604888249695">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1601277128495" />
+    <state x="521" y="140" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1604888249695" />
+    <state width="1493" height="214" key="GridCell.Tab.0.bottom" timestamp="1605354871174">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1323" height="224" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1604733773723" />
+    <state width="1493" height="214" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1605354871174" />
+    <state width="1493" height="214" key="GridCell.Tab.0.center" timestamp="1605354871174">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1323" height="224" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1604733773723" />
+    <state width="1493" height="214" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1605354871174" />
+    <state width="1493" height="214" key="GridCell.Tab.0.left" timestamp="1605354871174">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1323" height="224" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1604733773722" />
+    <state width="1493" height="214" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1605354871174" />
+    <state width="1493" height="214" key="GridCell.Tab.0.right" timestamp="1605354871174">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1323" height="224" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1604733773723" />
+    <state width="1493" height="214" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1605354871174" />
+    <state x="207" y="0" key="SettingsEditor" timestamp="1605354868722">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="184" y="11" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1603163519678" />
+    <state x="207" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1605354868722" />
+    <state x="57" y="64" key="new project wizard" timestamp="1601857829740">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="57" y="64" key="new project wizard/0.0.1366.738@0.0.1366.738" timestamp="1601857829740" />
+  </component>
+</project>

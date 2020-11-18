@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!-- 生成没有注释的实体类 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!-- 配置数据库连接 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/wangyi?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=GMT"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- 指定JavaBean生成的位置 -->
+        <javaModelGenerator targetPackage="com.wangyicourse.entity"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!--指定sql映射文件生成的位置  mapper.xml -->
+        <sqlMapGenerator targetPackage="mappers"
+                         targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- 指定接口生成的位置，mapper接口 -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.wangyicourse.mappers"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+
+        <!-- table指定每个表的生成策略 -->
+        <!--		<table tableName="newproduct" domainObjectName="NewProduct"></table>-->
+<!--        <table tableName="preorder" domainObjectName="PreOrder"></table>-->
+<!--        <table tableName="order" domainObjectName="Order"></table>-->
+<!--        <table tableName="cart" domainObjectName="Cart"></table>-->
+<!--        <table tableName="users" domainObjectName="Users"></table>-->
+<!--        <table tableName="preorder" domainObjectName="PreOrder"></table>-->
+<!--        <table tableName="institution" domainObjectName="Institution"></table>-->
+<!--        <table tableName="orders" domainObjectName="Orders"></table>-->
+<!--        <table tableName="orderitem" domainObjectName="OrderItem"></table>-->
+<!--        <table tableName="myStudy" domainObjectName="MyStudy"></table>-->
+<!--        <table tableName="users" domainObjectName="Users"></table>-->
+<!--        <table tableName="chapter" domainObjectName="Chapter"></table>-->
+        <table tableName="institution" domainObjectName="Institution"></table>
+<!--        <table tableName="coursedetailsicon" domainObjectName="CourseDetailsIcon"></table>-->
+    </context>
+</generatorConfiguration>

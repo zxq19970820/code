@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1e0f5bf0-c463-43cd-9559-3a41cbd27c0c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="190" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="SpringCloud" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/orderService/src/main/java/com/csi/order/controller/OrderController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/productService/src/main/java/com/csi/product/domain/Product.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/orderService/src/main/java/com/csi/order/OrderApplication.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1bwbVQN2maxw6rSXJSA2dI1lXUX" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/productService/src/main/resources" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\idea_data\SpringCloud\orderervice\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.csi.order.domain" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\idea_data\SpringCloud\productService\src\main\resources" />
+      <recent name="D:\idea_data\SpringCloud\EurekaServer\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="JarApplication" />
+        <option value="MavenRunConfiguration" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.EurekaServerApplication-02">
+    <configuration name="EurekaServerApplication-01" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+      <module name="EurekaServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.csi.eurekaserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.csi.eurekaserver.EurekaServerApplication" />
+      <option name="ACTIVE_PROFILES" value="01" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication-02" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="EurekaServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.csi.eurekaserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.csi.eurekaserver.EurekaServerApplication" />
+      <option name="ACTIVE_PROFILES" value="02" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="orderService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.csi.order.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.csi.order.OrderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductApplication-01" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+      <module name="productService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.csi.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.csi.product.ProductApplication" />
+      <option name="ACTIVE_PROFILES" value="01" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductApplication-02" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="productService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.csi.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.csi.product.ProductApplication" />
+      <option name="ACTIVE_PROFILES" value="02" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.EurekaServerApplication-02" />
+      <item itemvalue="Spring Boot.ProductApplication-02" />
+      <item itemvalue="Spring Boot.ProductApplication-01" />
+      <item itemvalue="Spring Boot.EurekaServerApplication-01" />
+      <item itemvalue="Spring Boot.OrderApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.OrderApplication" />
+        <item itemvalue="Spring Boot.EurekaServerApplication-01" />
+        <item itemvalue="Spring Boot.ProductApplication-01" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.25502318" />
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+        <serviceView>
+          <option name="contentProportion" value="0.25502318" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Not Started" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+          <option name="isSelected" value="true" />
+          <option name="viewType" value="group" />
+          <option name="roots">
+            <list>
+              <ServiceState>
+                <option name="path">
+                  <list>
+                    <option value="Run Dashboard" />
+                    <option value="SpringBootApplicationConfigurationType" />
+                  </list>
+                </option>
+                <option name="contributor" value="com.intellij.execution.dashboard.RunDashboardServiceViewContributor" />
+              </ServiceState>
+            </list>
+          </option>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1e0f5bf0-c463-43cd-9559-3a41cbd27c0c" name="Default Changelist" comment="" />
+      <created>1589546125465</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589546125465</updated>
+      <workItem from="1589546128930" duration="6692000" />
+      <workItem from="1589604722920" duration="21592000" />
+      <workItem from="1589680911740" duration="5597000" />
+      <workItem from="1589710180683" duration="742000" />
+      <workItem from="1589710974202" duration="151000" />
+      <workItem from="1589711135957" duration="5000" />
+      <workItem from="1589711147871" duration="4021000" />
+      <workItem from="1589720370915" duration="8000" />
+      <workItem from="1589877719535" duration="31000" />
+      <workItem from="1589890549785" duration="695000" />
+      <workItem from="1589898755622" duration="990000" />
+      <workItem from="1589933536259" duration="638000" />
+      <workItem from="1589936343706" duration="415000" />
+      <workItem from="1589940869139" duration="7877000" />
+      <workItem from="1589965304121" duration="44000" />
+      <workItem from="1589974155798" duration="10746000" />
+      <workItem from="1590027768687" duration="5209000" />
+      <workItem from="1590046282994" duration="1082000" />
+      <workItem from="1590047411023" duration="3290000" />
+      <workItem from="1590062100051" duration="2713000" />
+      <workItem from="1590068666378" duration="866000" />
+      <workItem from="1590072612752" duration="16000" />
+      <workItem from="1590106157294" duration="9526000" />
+      <workItem from="1590154498173" duration="2852000" />
+      <workItem from="1590198325860" duration="17046000" />
+      <workItem from="1590244997873" duration="362000" />
+      <workItem from="1590286236465" duration="612000" />
+      <workItem from="1590377557862" duration="68000" />
+      <workItem from="1590411983610" duration="4000" />
+      <workItem from="1590416892910" duration="793000" />
+      <workItem from="1590477349236" duration="44000" />
+      <workItem from="1590477408388" duration="144000" />
+      <workItem from="1590633091339" duration="1285000" />
+      <workItem from="1590734976127" duration="155000" />
+      <workItem from="1590807871786" duration="86000" />
+      <workItem from="1590821715515" duration="463000" />
+      <workItem from="1591001321160" duration="1816000" />
+      <workItem from="1591009771022" duration="1108000" />
+      <workItem from="1591235600960" duration="31000" />
+      <workItem from="1591242330586" duration="6123000" />
+      <workItem from="1591275606485" duration="3392000" />
+      <workItem from="1591320984454" duration="2634000" />
+      <workItem from="1591333018092" duration="24000" />
+      <workItem from="1591950893131" duration="627000" />
+      <workItem from="1592790542706" duration="43000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="313" y="0" width="753" height="738" key="#EurekaServerApplication02_(1)" timestamp="1590047003839">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="313" y="0" width="753" height="738" key="#EurekaServerApplication02_(1)/0.0.1366.738@0.0.1366.738" timestamp="1590047003839" />
+    <state x="313" y="6" key="#EurekaServerApplication_(1)" timestamp="1589975492476">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="313" y="6" key="#EurekaServerApplication_(1)/0.0.1366.738@0.0.1366.738" timestamp="1589975492476" />
+    <state x="275" y="28" key="#New_CloudFoundry_Connection" timestamp="1590033500347">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="28" key="#New_CloudFoundry_Connection/0.0.1366.738@0.0.1366.738" timestamp="1590033500347" />
+    <state x="275" y="28" key="#New_Docker_Connection" timestamp="1589626458889">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="28" key="#New_Docker_Connection/0.0.1366.738@0.0.1366.738" timestamp="1589626458889" />
+    <state x="275" y="28" key="#New_Google_App_Engine_Connection" timestamp="1589945257610">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="28" key="#New_Google_App_Engine_Connection/0.0.1366.738@0.0.1366.738" timestamp="1589945257610" />
+    <state x="313" y="6" key="#ProductApplication_(1)" timestamp="1589979533788">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="313" y="6" key="#ProductApplication_(1)/0.0.1366.738@0.0.1366.738" timestamp="1589979533788" />
+    <state x="0" y="56" key="#Project_Structure" timestamp="1589611156067">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="0" y="56" key="#Project_Structure/0.0.1366.738@0.0.1366.738" timestamp="1589611156067" />
+    <state x="93" y="54" width="1092" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590210824194">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="93" y="54" width="1092" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1590210824194" />
+    <state x="0" y="158" key="#com.intellij.ide.util.MemberChooser" timestamp="1590219850138">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="0" y="158" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1590219850138" />
+    <state x="275" y="177" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590032724905">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="177" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.738@0.0.1366.738" timestamp="1590032724905" />
+    <state x="341" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590209077606">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="341" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738@0.0.1366.738" timestamp="1590209077606" />
+    <state x="479" y="133" key="FileChooserDialogImpl" timestamp="1590735102165">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="479" y="133" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1590735102165" />
+    <state width="963" height="303" key="GridCell.Tab.0.bottom" timestamp="1590735136260">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="963" height="303" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1590735136260" />
+    <state width="963" height="303" key="GridCell.Tab.0.center" timestamp="1590735136260">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="963" height="303" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1590735136260" />
+    <state width="963" height="303" key="GridCell.Tab.0.left" timestamp="1590735136260">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="963" height="303" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1590735136260" />
+    <state width="963" height="303" key="GridCell.Tab.0.right" timestamp="1590735136260">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="963" height="303" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1590735136260" />
+    <state width="963" height="303" key="GridCell.Tab.1.bottom" timestamp="1590735136260">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="963" height="303" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1590735136260" />
+    <state width="963" height="303" key="GridCell.Tab.1.center" timestamp="1590735136260">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="963" height="303" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1590735136260" />
+    <state width="963" height="303" key="GridCell.Tab.1.left" timestamp="1590735136260">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="963" height="303" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1590735136260" />
+    <state width="963" height="303" key="GridCell.Tab.1.right" timestamp="1590735136260">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="963" height="303" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1590735136260" />
+    <state x="32" y="0" key="SettingsEditor" timestamp="1590128907008">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="32" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1590128907008" />
+    <state x="107" y="38" key="new project wizard" timestamp="1590735134339">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="107" y="38" key="new project wizard/0.0.1366.738@0.0.1366.738" timestamp="1590735134339" />
+    <state x="461" y="150" width="716" height="306" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1590223337867">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="461" y="150" width="716" height="306" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1366.738@0.0.1366.738" timestamp="1590223337867" />
+    <state x="339" y="165" key="run.anything.popup" timestamp="1589611077611">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1589611077611" />
+    <state x="819" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1590223330614">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="819" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1590223330614" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SpringCloud$OrderApplication.ic" NAME="OrderApplication Coverage Results" MODIFIED="1589980742200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.csi.order.*</FILTER>
+    </SUITE>
+  </component>
+</project>

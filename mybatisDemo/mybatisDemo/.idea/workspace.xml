@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ca67639d-b80f-43b2-96e1-2bdbe6bd03e3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="C:\Users\zhangxingqiang\.m2\repository" />
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+        <option name="userSettingsFile" value="C:\Users\zhangxingqiang\.m2\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Zw9PV23Pc05sjkym4k5NH4iZBN" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ssmByHeiMa" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\idea_data\mybatisDemo\mybatisDemo\src\main\resources" />
+      <recent name="D:\idea_data\mybatisDemo\mybatisDemo\src\main\resources\" />
+      <recent name="D:\idea_data\mybatisDemo\testModule" />
+      <recent name="D:\idea_data\mybatisDemo\mybatisDemo\src\main\resources\mappers" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.it.test" />
+      <recent name="com.ssm.mapper" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\idea_data\mybatisDemo\mybatisDemo\src\main\resources" />
+      <recent name="D:\idea_data\mybatisDemo\testModule\src\main\resources" />
+      <recent name="D:\idea_data\mybatisDemo\mybatisDemo\src\main\java\com\ssm\test" />
+      <recent name="D:\idea_data\mybatisDemo\mybatisDemo\src\main\resources\mappers" />
+      <recent name="D:\idea_data\mybatisDemo\testModule" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.test2">
+    <configuration name="TestGenerator (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ssm.test.TestGenerator" />
+      <module name="mybatisDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ssm.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.it.test.TestGenerator" />
+      <module name="testModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.it.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMembers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ssm.test.TestMembers" />
+      <module name="mybatisDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ssm.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="hwTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ssm.test.hwTest" />
+      <module name="mybatisDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ssm.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ssm.test.test2" />
+      <module name="mybatisDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ssm.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.test2" />
+        <item itemvalue="Application.TestMembers" />
+        <item itemvalue="Application.hwTest" />
+        <item itemvalue="Application.TestGenerator (1)" />
+        <item itemvalue="Application.TestGenerator" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ca67639d-b80f-43b2-96e1-2bdbe6bd03e3" name="Default Changelist" comment="" />
+      <created>1585739265044</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585739265044</updated>
+      <workItem from="1585739268599" duration="8879000" />
+      <workItem from="1585752228658" duration="1492000" />
+      <workItem from="1585786848239" duration="10627000" />
+      <workItem from="1585840471544" duration="1289000" />
+      <workItem from="1585892267363" duration="14167000" />
+      <workItem from="1585921902619" duration="210000" />
+      <workItem from="1585922146171" duration="528000" />
+      <workItem from="1585922771774" duration="275000" />
+      <workItem from="1585926207991" duration="801000" />
+      <workItem from="1585981352939" duration="100000" />
+      <workItem from="1585981487803" duration="391000" />
+      <workItem from="1585982045547" duration="516000" />
+      <workItem from="1585982673997" duration="20884000" />
+      <workItem from="1586058921373" duration="2832000" />
+      <workItem from="1586071697240" duration="1709000" />
+      <workItem from="1586073750828" duration="20000" />
+      <workItem from="1586073881592" duration="1003000" />
+      <workItem from="1586091383210" duration="6809000" />
+      <workItem from="1586141411558" duration="7606000" />
+      <workItem from="1586165846999" duration="8451000" />
+      <workItem from="1586184902652" duration="1046000" />
+      <workItem from="1586218422303" duration="25431000" />
+      <workItem from="1586247176387" duration="4317000" />
+      <workItem from="1586255069954" duration="14551000" />
+      <workItem from="1586304385119" duration="12296000" />
+      <workItem from="1586319879397" duration="836000" />
+      <workItem from="1586321352874" duration="3696000" />
+      <workItem from="1586325579399" duration="23201000" />
+      <workItem from="1586391961442" duration="10718000" />
+      <workItem from="1586408045398" duration="20000" />
+      <workItem from="1586415977497" duration="706000" />
+      <workItem from="1586421606204" duration="10664000" />
+      <workItem from="1586441398853" duration="1199000" />
+      <workItem from="1586511370383" duration="667000" />
+      <workItem from="1586513578658" duration="668000" />
+      <workItem from="1586590193033" duration="11970000" />
+      <workItem from="1586610858375" duration="4700000" />
+      <workItem from="1586667531151" duration="57000" />
+      <workItem from="1586667676050" duration="7932000" />
+      <workItem from="1586686119300" duration="6508000" />
+      <workItem from="1586697692533" duration="980000" />
+      <workItem from="1586703005884" duration="2388000" />
+      <workItem from="1586737046626" duration="2296000" />
+      <workItem from="1586778496646" duration="91000" />
+      <workItem from="1586847004540" duration="4380000" />
+      <workItem from="1586855151363" duration="414000" />
+      <workItem from="1586858209575" duration="118000" />
+      <workItem from="1586869185374" duration="2338000" />
+      <workItem from="1586873095043" duration="459000" />
+      <workItem from="1586874094794" duration="638000" />
+      <workItem from="1586875689510" duration="41000" />
+      <workItem from="1586876032123" duration="126000" />
+      <workItem from="1586876586060" duration="456000" />
+      <workItem from="1586878033195" duration="462000" />
+      <workItem from="1586919159835" duration="30000" />
+      <workItem from="1587303823268" duration="1204000" />
+      <workItem from="1587341075539" duration="2089000" />
+      <workItem from="1587473127976" duration="895000" />
+      <workItem from="1587605991864" duration="79000" />
+      <workItem from="1587700048231" duration="600000" />
+      <workItem from="1587735001849" duration="187000" />
+      <workItem from="1588131152493" duration="22000" />
+      <workItem from="1589381719450" duration="77000" />
+      <workItem from="1589422435482" duration="96000" />
+      <workItem from="1590412624433" duration="1499000" />
+      <workItem from="1590455462432" duration="1493000" />
+      <workItem from="1590741141532" duration="86000" />
+      <workItem from="1590741307490" duration="111000" />
+      <workItem from="1590741669244" duration="729000" />
+      <workItem from="1590824092462" duration="1392000" />
+      <workItem from="1591016417606" duration="960000" />
+      <workItem from="1591055499455" duration="388000" />
+      <workItem from="1591063657039" duration="4238000" />
+      <workItem from="1591078902356" duration="3887000" />
+      <workItem from="1591425447275" duration="48000" />
+      <workItem from="1591448186712" duration="395000" />
+      <workItem from="1592308998931" duration="159000" />
+      <workItem from="1592378338930" duration="161000" />
+      <workItem from="1592382649850" duration="28000" />
+      <workItem from="1592578752253" duration="165000" />
+      <workItem from="1592659194795" duration="98000" />
+      <workItem from="1592730328064" duration="17000" />
+      <workItem from="1594652525827" duration="1058000" />
+      <workItem from="1594696834349" duration="20000" />
+      <workItem from="1594732927434" duration="856000" />
+      <workItem from="1594734370631" duration="603000" />
+      <workItem from="1594805514119" duration="23000" />
+      <workItem from="1594805830930" duration="1262000" />
+      <workItem from="1594873689857" duration="2859000" />
+      <workItem from="1594886105569" duration="213000" />
+      <workItem from="1594890637656" duration="6000" />
+      <workItem from="1594897642829" duration="376000" />
+      <workItem from="1594900894060" duration="270000" />
+      <workItem from="1600134575507" duration="57000" />
+      <workItem from="1600135838144" duration="6000" />
+      <workItem from="1600137419694" duration="10000" />
+      <workItem from="1600138419276" duration="47000" />
+      <workItem from="1600395853321" duration="14000" />
+      <workItem from="1604885967774" duration="656000" />
+      <workItem from="1605439821974" duration="30000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="173" key="FileChooserDialogImpl" timestamp="1604886627794">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="549" y="173" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1604886627794" />
+    <state x="270" y="0" key="SettingsEditor" timestamp="1604886354920">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="270" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1604886354920" />
+  </component>
+</project>

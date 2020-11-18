@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--    开启组件扫描-->
+    <context:component-scan base-package="com.zxq.service"/>
+    <context:component-scan base-package="com.zxq.mapper"/>
+
+    <!--    spring整合mybatis，接管mybatis的核心配置文件的功能，sql映射spring做不到，还是由mybatis
+    实现，但是其它，配置文件的读取，各种bean管理，datasource和事务的管理都交给spring-->
+    <!--    读取datasource的配置文件-->
+    <context:property-placeholder location="classpath:db1.properties"/>
+    <!--    <bean  class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+    <!--        <property name="location" value="classpath:db.properties"/>-->
+    <!--    </bean>-->
+
+
+    <!--    配置数据源-->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${jdbc.driver}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+
+    <!--    配置sqlsessionFactory-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--        注入dataSource-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--        配置别名扫描-->
+        <property name="typeAliasesPackage" value="com.zxq.domain"/>
+        <!--        加载mapper映射文件-->
+        <property name="mapperLocations" value="classpath:mappers/UserMapper.xml"/>
+        <!--        如果mybatis核心配置文件中没有可用配置，可以加载，也可以不加载，不影响执行-->
+        <!--        <property name="configLocation" value="classpath:mybatis.xml"/>-->
+    </bean>
+
+
+    <!--    配置mapper接口的扫描-->
+    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.zxq.mapper"/>
+    </bean>
+
+    <!--    事务控制-->
+    <!--    配置事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--    开启事务的注解驱动-->
+    <!--    <tx:annotation-driven transaction-manager="transactionManager"/>-->
+
+    <!--    事务通知-->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="find*" read-only="true"/>
+            <tx:method name="save*" read-only="false" rollback-for="Throwable"/>
+            <tx:method name="update*" read-only="false" rollback-for="Throwable"/>
+            <tx:method name="delete*" read-only="false" rollback-for="Throwable"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!--    配置aop织入事务-->
+    <aop:config>
+        <aop:pointcut id="serviceMethod" expression="execution(* com.zxq.service..*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod"/>
+    </aop:config>
+
+
+</beans>
